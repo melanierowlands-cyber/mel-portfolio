@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Melanie Rowlands — Designer & Developer · Cape Town</title>
+<meta name="description" content="Melanie Rowlands is a Cape Town-based designer and developer. Full-stack platform builds, LMS development, WooCommerce, brand, surface pattern and AI-enabled tools." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --teal-deep: #0f3d3e;
+    --teal: #1a5757;
+    --teal-soft: #d9e8e6;
+    --gold: #e8b84a;
+    --gold-warm: #d89c2b;
+    --coral: #f4b5a8;
+    --coral-deep: #e88a7a;
+    --cream: #f5efe4;
+    --cream-light: #faf6ee;
+    --ink: #1a1a1a;
+    --ink-soft: #3a3a3a;
+    --paper: #fffbf3;
+
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Inter', -apple-system, sans-serif;
+    --script: 'Caveat', cursive;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 17px;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+
+  main { position: relative; z-index: 2; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+    z-index: 100;
+    background: rgba(255, 251, 243, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(15, 61, 62, 0.08);
+  }
+  .logo {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--teal-deep);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .logo-mark {
+    width: 26px;
+    height: 26px;
+    background: var(--gold);
+    border-radius: 50% 50% 0 0;
+    display: inline-block;
+  }
+  .logo em { font-style: italic; color: var(--gold-warm); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .nav-links a { color: var(--ink-soft); transition: color 0.2s ease; }
+  .nav-links a:hover { color: var(--gold-warm); }
+  .nav-cta {
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 0.55rem 1.2rem;
+    background: var(--teal-deep);
+    color: var(--cream-light);
+    border-radius: 999px;
+    transition: all 0.25s ease;
+  }
+  .nav-cta:hover { background: var(--gold-warm); transform: translateY(-1px); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 10rem 2.5rem 6rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: var(--gold-warm);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--teal-deep);
+    margin-bottom: 1.75rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold-warm);
+  }
+  .hero-lede {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 32rem;
+    margin-bottom: 2.25rem;
+    line-height: 1.55;
+  }
+  .hero-lede em { font-style: italic; color: var(--teal); }
+  .hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.75rem;
+    background: var(--teal-deep);
+    color: var(--cream-light);
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+  }
+  .btn-primary:hover { background: var(--gold-warm); transform: translateY(-2px); }
+  .btn-secondary {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--teal-deep);
+    padding: 0.95rem 0;
+    border-bottom: 1.5px solid var(--teal-deep);
+    transition: all 0.25s ease;
+  }
+  .btn-secondary:hover { color: var(--gold-warm); border-color: var(--gold-warm); }
+
+  /* ---------- HERO VISUAL: HEADSHOT + GEOMETRIC SHAPES ---------- */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1.05;
+  }
+  .hero-plate {
+    position: absolute;
+    inset: 0;
+    background: var(--teal-deep);
+    overflow: hidden;
+  }
+  .hero-shape-1 {
+    position: absolute;
+    width: 60%;
+    aspect-ratio: 2 / 1;
+    background: var(--gold);
+    top: 0;
+    left: 0;
+    border-radius: 0 0 100% 100% / 0 0 100% 100%;
+  }
+  .hero-shape-2 {
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    background: var(--coral);
+    bottom: 0;
+    right: 0;
+    border-radius: 100% 0 0 0;
+  }
+  .hero-shape-5 {
+    position: absolute;
+    width: 8%;
+    height: 20%;
+    background: var(--gold);
+    bottom: 10%;
+    left: 8%;
+    z-index: 1;
+  }
+  /* Headshot sits on top of shapes in a circular frame */
+  .hero-headshot-wrap {
+    position: absolute;
+    width: 62%;
+    aspect-ratio: 1;
+    top: 20%;
+    left: 19%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+    background: var(--cream);
+    box-shadow: 0 20px 50px -20px rgba(15, 61, 62, 0.4);
+  }
+  .hero-headshot-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Placeholder text if no photo yet */
+  .hero-headshot-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--teal-deep);
+    opacity: 0.5;
+    text-align: center;
+    padding: 2rem;
+  }
+  .hero-badge {
+    position: absolute;
+    top: 6%;
+    right: -4%;
+    z-index: 5;
+    width: 125px;
+    height: 125px;
+    background: var(--cream-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--script);
+    font-size: 1.1rem;
+    color: var(--teal-deep);
+    text-align: center;
+    line-height: 1.15;
+    padding: 1rem;
+    box-shadow: 0 10px 30px -10px rgba(15, 61, 62, 0.25);
+    transform: rotate(-8deg);
+    animation: gentleFloat 6s ease-in-out infinite;
+  }
+  @keyframes gentleFloat {
+    0%, 100% { transform: rotate(-8deg) translateY(0); }
+    50% { transform: rotate(-6deg) translateY(-8px); }
+  }
+  .hero-badge-inner { position: relative; }
+  .hero-badge-inner::before {
+    content: '✦';
+    position: absolute;
+    top: -1.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold-warm);
+    font-size: 0.9rem;
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee-strip {
+    background: var(--gold);
+    padding: 1.1rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(15, 61, 62, 0.1);
+    border-bottom: 1px solid rgba(15, 61, 62, 0.1);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--teal-deep);
+  }
+  .marquee-track span {
+    display: inline-flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .marquee-track .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--teal-deep);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section {
+    padding: 7rem 2.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .section-label {
+    font-family: var(--script);
+    font-size: 1.6rem;
+    color: var(--gold-warm);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    transform: rotate(-2deg);
+  }
+  .section-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    color: var(--teal-deep);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold-warm); }
+  .section-intro {
+    max-width: 42rem;
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+  }
+
+  /* ---------- DUAL OFFERING ---------- */
+  .dual {
+    background: var(--teal-deep);
+    margin: 0;
+    max-width: none;
+    color: var(--cream-light);
+    padding: 7rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .dual::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 90px;
+    background: var(--coral);
+    top: 0;
+    right: 8%;
+    border-radius: 0 0 100% 100% / 0 0 100% 100%;
+    z-index: 0;
+  }
+  .dual::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--gold);
+    bottom: 15%;
+    left: 3%;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .dual-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .dual .section-label { color: var(--coral); }
+  .dual .section-title { color: var(--cream-light); }
+  .dual .section-title em { color: var(--gold); }
+  .dual .section-intro { color: rgba(245, 239, 228, 0.78); }
+  .dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+  .pillar {
+    position: relative;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  .pillar:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-4px);
+  }
+  .pillar-mark {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .pillar-creative .pillar-mark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--coral);
+    border-radius: 50% 50% 0 0;
+  }
+  .pillar-creative .pillar-mark::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--cream-light);
+    border-radius: 50%;
+  }
+  .pillar-tech .pillar-mark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+  .pillar-tech .pillar-mark::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--coral);
+    border-radius: 0 100% 0 0;
+  }
+  .pillar h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .pillar p {
+    color: rgba(245, 239, 228, 0.75);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+  .pillar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .pillar li {
+    font-size: 0.92rem;
+    color: rgba(245, 239, 228, 0.85);
+    padding-left: 1.4rem;
+    position: relative;
+  }
+  .pillar li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+  }
+  .pillar-creative li::before { background: var(--coral); }
+
+  /* ---------- FEATURED: INGENIO ---------- */
+  .featured {
+    background: var(--cream);
+    margin: 0;
+    max-width: none;
+    padding: 7rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .featured-geo-1 {
+    position: absolute;
+    width: 140px;
+    height: 70px;
+    background: var(--teal-deep);
+    top: 0;
+    left: 10%;
+    border-radius: 0 0 100% 100% / 0 0 100% 100%;
+    z-index: 0;
+  }
+  .featured-geo-2 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: var(--coral);
+    bottom: 15%;
+    right: 5%;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .featured-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .featured-header {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 3rem;
+  }
+  .featured-tag {
+    display: inline-block;
+    background: var(--teal-deep);
+    color: var(--cream-light);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+  .featured h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.02;
+    color: var(--teal-deep);
+    letter-spacing: -0.025em;
+  }
+  .featured h2 em { font-style: italic; color: var(--coral-deep); }
+
+  .lms-callout {
+    background: var(--teal-deep);
+    color: var(--cream-light);
+    padding: 1.75rem 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .lms-callout-mark {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--gold);
+    border-radius: 50% 50% 0 0;
+    position: relative;
+  }
+  .lms-callout-mark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    width: 14px;
+    height: 14px;
+    background: var(--coral);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  .lms-callout-text {
+    font-family: var(--display);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+  .lms-callout-text strong {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .featured-mockup {
+    background: var(--teal-deep);
+    aspect-ratio: 16 / 10;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+  .mockup-geo-1 {
+    position: absolute;
+    width: 42%;
+    aspect-ratio: 2 / 1;
+    background: var(--coral);
+    top: 0;
+    right: 0;
+    border-radius: 0 0 100% 100% / 0 0 100% 100%;
+  }
+  .mockup-geo-2 {
+    position: absolute;
+    width: 18%;
+    aspect-ratio: 1;
+    background: var(--gold);
+    bottom: 15%;
+    right: 12%;
+    border-radius: 50%;
+  }
+  .mockup-geo-3 {
+    position: absolute;
+    width: 10%;
+    height: 45%;
+    background: var(--cream);
+    bottom: 0;
+    right: 28%;
+  }
+  .featured-mockup-content {
+    position: absolute;
+    inset: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--cream-light);
+    z-index: 2;
+    max-width: 55%;
+  }
+  .mockup-title {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--gold);
+  }
+  .mockup-subtitle {
+    font-family: var(--display);
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  .mockup-chip-row {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: auto;
+    flex-wrap: wrap;
+  }
+  .mockup-chip {
+    padding: 0.45rem 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+
+  .featured-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .detail-block h4 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--teal-deep);
+    margin-bottom: 1rem;
+  }
+  .detail-block p {
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .detail-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(15, 61, 62, 0.15);
+  }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--gold-warm);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+  .tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  .tech-badge {
+    padding: 0.4rem 0.9rem;
+    background: var(--paper);
+    border: 1px solid rgba(15, 61, 62, 0.15);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--teal-deep);
+  }
+  .tech-badge-featured {
+    background: var(--teal-deep);
+    color: var(--gold);
+    border-color: var(--teal-deep);
+  }
+
+  /* ---------- SELECTED WEB WORK ---------- */
+  .selected-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .work-card {
+    background: var(--cream-light);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(15, 61, 62, 0.08);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .work-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -20px rgba(15, 61, 62, 0.2);
+  }
+  .work-visual {
+    aspect-ratio: 16 / 10;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  /* Labyrinth: deep teal brand */
+  .work-card-labyrinth .work-visual { background: var(--teal-deep); }
+  .work-card-labyrinth .work-visual::before {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 110px;
+    background: var(--gold);
+    top: 0;
+    right: 8%;
+    border-radius: 0 0 100% 100% / 0 0 100% 100%;
+  }
+  .work-card-labyrinth .work-visual::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: var(--coral);
+    border-radius: 50%;
+    bottom: 15%;
+    left: 10%;
+  }
+  /* A Cut Above: soft, warm, feminine */
+  .work-card-acutabove .work-visual { background: var(--coral); }
+  .work-card-acutabove .work-visual::before {
+    content: '';
+    position: absolute;
+    width: 65%;
+    height: 70%;
+    background: var(--cream);
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 100%;
+  }
+  .work-card-acutabove .work-visual::after {
+    content: '';
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: var(--teal);
+    border-radius: 50%;
+    bottom: 18%;
+    left: 15%;
+  }
+  /* GanzAfrica: serious, pan-African green */
+  .work-card-ganz .work-visual { background: #1a4d2e; }
+  .work-card-ganz .work-visual::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    background: #d4a82a;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 0;
+  }
+  .work-card-ganz .work-visual::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--cream);
+    border-radius: 50%;
+    top: 15%;
+    right: 15%;
+  }
+  /* Huddle: app-like, playful */
+  .work-card-huddle .work-visual { background: var(--teal-soft); }
+  .work-card-huddle .work-visual::before {
+    content: '';
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 1/2;
+    background: var(--teal-deep);
+    top: 20%;
+    left: 30%;
+    border-radius: 16px;
+  }
+  .work-card-huddle .work-visual::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: 18%;
+    right: 18%;
+  }
+
+  .work-visual-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 1rem;
+  }
+  .work-visual-title {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--cream-light);
+  }
+  .work-card-acutabove .work-visual-title { color: var(--teal-deep); }
+  .work-card-huddle .work-visual-title { color: var(--teal-deep); }
+
+  .work-visual-tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cream-light);
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+  }
+  .work-card-acutabove .work-visual-tag,
+  .work-card-huddle .work-visual-tag {
+    color: var(--teal-deep);
+    background: rgba(15, 61, 62, 0.08);
+    border-color: rgba(15, 61, 62, 0.2);
+  }
+
+  .work-meta {
+    padding: 1.5rem 1.75rem 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .work-meta-cat {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+    margin-bottom: 0.5rem;
+  }
+  .work-meta h4 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--teal-deep);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .work-meta p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+  .work-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--teal-deep);
+    border-bottom: 1px solid var(--teal-deep);
+    padding-bottom: 2px;
+    align-self: flex-start;
+    transition: all 0.2s ease;
+  }
+  .work-link:hover {
+    color: var(--gold-warm);
+    border-color: var(--gold-warm);
+  }
+
+  /* ---------- BRAND & PRINT SECTION ---------- */
+  .brand-print {
+    background: var(--cream);
+    margin: 0;
+    max-width: none;
+    padding: 7rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .brand-print-geo {
+    position: absolute;
+    width: 160px;
+    height: 80px;
+    background: var(--gold);
+    top: 0;
+    right: 15%;
+    border-radius: 0 0 100% 100% / 0 0 100% 100%;
+    z-index: 0;
+  }
+  .brand-print-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .brand-print-header {
+    max-width: 700px;
+    margin-bottom: 4rem;
+  }
+
+  /* Studio E Fabrics feature block */
+  .studio-e-feature {
+    background: var(--paper);
+    padding: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem;
+    align-items: center;
+    border: 1px solid rgba(15, 61, 62, 0.08);
+  }
+  .studio-e-feature::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--coral);
+    border-radius: 50%;
+    top: -20px;
+    right: 40px;
+  }
+  .studio-e-label {
+    font-family: var(--script);
+    font-size: 1.4rem;
+    color: var(--coral-deep);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    transform: rotate(-2deg);
+  }
+  .studio-e-feature h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--teal-deep);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.015em;
+  }
+  .studio-e-feature h3 em { font-style: italic; color: var(--gold-warm); }
+  .studio-e-feature p {
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    font-size: 1.02rem;
+  }
+  .studio-e-feature .credit {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--teal);
+    padding-top: 1rem;
+    border-top: 1px solid rgba(15, 61, 62, 0.12);
+  }
+  .studio-e-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.75rem;
+    aspect-ratio: 1 / 1;
+  }
+  .studio-e-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .studio-e-images img:first-child {
+    grid-row: 1 / span 2;
+  }
+
+  /* ---------- LICENSED PATTERN — dual feature block (Studio E + Nested Bean) ---------- */
+  .licensed-feature {
+    background: var(--paper);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    border: 1px solid rgba(15, 61, 62, 0.08);
+  }
+  .licensed-feature::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--coral);
+    border-radius: 50%;
+    top: -20px;
+    right: 40px;
+  }
+  .licensed-feature-intro {
+    max-width: 720px;
+    margin-bottom: 3rem;
+  }
+  .licensed-eyebrow {
+    font-family: var(--script);
+    font-size: 1.4rem;
+    color: var(--coral-deep);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    transform: rotate(-2deg);
+  }
+  .licensed-feature h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--teal-deep);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.015em;
+  }
+  .licensed-feature h3 em { font-style: italic; color: var(--gold-warm); }
+  .licensed-feature-intro p {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+
+  /* Two licensed collaborations side by side */
+  .licensed-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .licensed-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .licensed-col-images {
+    margin-bottom: 1.5rem;
+  }
+  .licensed-col-brand {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--teal-deep);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .licensed-col-sub {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+    margin-bottom: 0.85rem;
+  }
+  .licensed-col-desc {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+  .licensed-col-credit {
+    margin-top: auto;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--teal);
+    padding-top: 0.9rem;
+    border-top: 1px solid rgba(15, 61, 62, 0.1);
+  }
+
+  /* Studio E images: 3-image grid (hero spans 2 rows) */
+  .licensed-studio-e {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    aspect-ratio: 1 / 1;
+  }
+  .licensed-studio-e img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .licensed-studio-e img:first-child {
+    grid-row: 1 / span 2;
+  }
+  /* Nested Bean images: two product shots side by side */
+  .licensed-nested-bean {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    aspect-ratio: 1 / 1;
+    background: var(--cream);
+    padding: 0.75rem;
+  }
+  .licensed-nested-bean img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Subheading inside the Brand & Print section */
+  .subsection-divider {
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(15, 61, 62, 0.12);
+  }
+  .subsection-divider h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: var(--teal-deep);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.5rem;
+  }
+  .subsection-divider h3 em { font-style: italic; color: var(--gold-warm); }
+  .subsection-divider p {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 42rem;
+  }
+
+  /* Packaging grid (Sarah Graham + Jimmy Public + Sunrise lookbook) */
+  .print-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .print-card {
+    background: var(--paper);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(15, 61, 62, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+  .print-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -15px rgba(15, 61, 62, 0.18);
+  }
+  .print-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .print-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .print-image.contain img {
+    object-fit: contain;
+    padding: 1rem;
+  }
+  .print-meta {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+  .print-meta-cat {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+    margin-bottom: 0.4rem;
+  }
+  .print-meta h4 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--teal-deep);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+  .print-meta p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  /* ---------- CAPABILITIES ---------- */
+  .capabilities {
+    background: var(--teal-soft);
+    margin: 0;
+    max-width: none;
+    padding: 7rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .capabilities-geo-1 {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: var(--gold);
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 100%;
+    z-index: 0;
+  }
+  .capabilities-geo-2 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: var(--coral);
+    bottom: 10%;
+    right: 8%;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .capabilities-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+  }
+  .cap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(15, 61, 62, 0.15);
+    border-left: 1px solid rgba(15, 61, 62, 0.15);
+  }
+  .cap-item {
+    padding: 1.75rem;
+    border-right: 1px solid rgba(15, 61, 62, 0.15);
+    border-bottom: 1px solid rgba(15, 61, 62, 0.15);
+    transition: background 0.2s ease;
+  }
+  .cap-item:hover { background: rgba(255, 255, 255, 0.35); }
+  .cap-item-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+    margin-bottom: 0.6rem;
+  }
+  .cap-item h4 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--teal-deep);
+    margin-bottom: 0.5rem;
+  }
+  .cap-item p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about { padding: 7rem 2.5rem; }
+  .about-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-visual {
+    position: sticky;
+    top: 6rem;
+    aspect-ratio: 3 / 4;
+    background: var(--gold);
+    overflow: hidden;
+  }
+  .about-visual-shape-1 {
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    background: var(--coral);
+    bottom: 0;
+    left: 0;
+    border-radius: 100% 100% 0 0 / 100% 100% 0 0;
+    z-index: 1;
+  }
+  .about-visual-shape-2 {
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 1;
+    background: var(--teal-deep);
+    border-radius: 50%;
+    top: 8%;
+    right: 8%;
+    z-index: 1;
+  }
+  /* Mel studio photo floats inside the about composition */
+  .about-visual-photo {
+    position: absolute;
+    width: 70%;
+    aspect-ratio: 3 / 4;
+    top: 20%;
+    left: 15%;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 15px 40px -15px rgba(15, 61, 62, 0.4);
+  }
+  .about-visual-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-visual-caption {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--script);
+    font-size: 1.25rem;
+    color: var(--teal-deep);
+    z-index: 3;
+    background: var(--cream-light);
+    padding: 0.3rem 1rem;
+    white-space: nowrap;
+    box-shadow: 0 6px 14px -6px rgba(15, 61, 62, 0.25);
+  }
+
+  .about-body h3 {
+    font-family: var(--display);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--teal-deep);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.015em;
+  }
+  .about-body h3 em { font-style: italic; color: var(--gold-warm); }
+  .about-body p {
+    color: var(--ink-soft);
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+  }
+  .about-body p:last-of-type { margin-bottom: 2rem; }
+  .about-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.75rem;
+    background: var(--cream);
+    border-left: 3px solid var(--gold-warm);
+  }
+  .highlight-item {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .highlight-item strong {
+    display: block;
+    font-family: var(--display);
+    font-weight: 600;
+    color: var(--teal-deep);
+    font-size: 1.05rem;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact {
+    background: var(--teal-deep);
+    margin: 0;
+    max-width: none;
+    padding: 8rem 2.5rem;
+    color: var(--cream-light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-geo-1 {
+    position: absolute;
+    width: 260px;
+    height: 130px;
+    background: var(--gold);
+    top: 0;
+    right: 5%;
+    border-radius: 0 0 100% 100% / 0 0 100% 100%;
+    z-index: 0;
+  }
+  .contact-geo-2 {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: var(--coral);
+    border-radius: 50%;
+    bottom: -60px;
+    left: 5%;
+    z-index: 0;
+  }
+  .contact-geo-3 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--cream);
+    border-radius: 50%;
+    top: 18%;
+    left: 12%;
+    z-index: 0;
+  }
+  .contact-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .contact .section-label { color: var(--coral); }
+  .contact h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+  }
+  .contact h2 em { font-style: italic; color: var(--gold); }
+  .contact p {
+    color: rgba(245, 239, 228, 0.85);
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-cta-row {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    background: var(--gold);
+    color: var(--teal-deep);
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+  }
+  .btn-gold:hover { background: var(--cream-light); transform: translateY(-2px); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    border: 1.5px solid rgba(245, 239, 228, 0.4);
+    color: var(--cream-light);
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--teal-deep);
+    color: rgba(245, 239, 228, 0.55);
+    padding: 2rem 2.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+    border-top: 1px solid rgba(245, 239, 228, 0.08);
+  }
+  footer em {
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 7rem 1.5rem 4rem;
+      gap: 3rem;
+    }
+    .hero-visual { aspect-ratio: 1/1; max-width: 380px; margin: 0 auto; }
+    section, .dual, .featured, .brand-print, .capabilities, .contact { padding: 5rem 1.5rem; }
+    .dual-grid, .featured-header, .featured-details, .capabilities-inner, .about-grid, .studio-e-feature, .licensed-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .selected-grid { grid-template-columns: 1fr; }
+    .print-grid { grid-template-columns: 1fr; }
+    .detail-stats { grid-template-columns: 1fr 1fr; }
+    .about-visual { aspect-ratio: 3/4; position: relative; top: 0; max-width: 360px; margin: 0 auto; }
+    .cap-grid { grid-template-columns: 1fr; }
+    .featured-mockup-content { inset: 1.5rem; max-width: 100%; }
+    .mockup-title { font-size: 1.4rem; }
+    .mockup-subtitle { font-size: 1.6rem; }
+    .lms-callout { flex-direction: column; text-align: center; gap: 1rem; }
+    .lms-callout-text { font-size: 1rem; }
+    .studio-e-feature, .licensed-feature { padding: 2rem; }
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo"><span class="logo-mark"></span>Melanie <em>Rowlands</em></a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#brand">Brand &amp; Print</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#about">About</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get in touch</a>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow">Designer <span style="color:var(--coral-deep)">&amp;</span> Developer · Cape Town</div>
+      <h1>
+        Platform builds &amp; <em>considered</em> design for brands that value <em>craft</em>.
+      </h1>
+      <p class="hero-lede">
+        I design <em>and</em> build digital products &mdash; from full-stack learning platforms and
+        WooCommerce stores through to visual identity, surface pattern, and AI-enabled tools.
+        Twenty years of experience across brand, data, and platform development.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#work" class="btn-primary">
+          See selected work
+          <span>→</span>
+        </a>
+        <a href="#contact" class="btn-secondary">Start a project</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-plate">
+        <div class="hero-shape-1"></div>
+        <div class="hero-shape-2"></div>
+        <div class="hero-shape-5"></div>
+      </div>
+
+      <!-- HEADSHOT: swap in ./assets/headshot.jpg when you've uploaded it -->
+      <div class="hero-headshot-wrap">
+        <!-- Replace the placeholder div below with:  <img src="assets/headshot.jpg" alt="Melanie Rowlands" />  -->
+        <div class="hero-headshot-placeholder">Add headshot here:<br>assets/headshot.jpg</div>
+      </div>
+
+      <div class="hero-badge">
+        <div class="hero-badge-inner">designer<br>who codes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>
+        Platform Development <span class="dot"></span>
+        LMS &amp; Course Delivery <span class="dot"></span>
+        WooCommerce <span class="dot"></span>
+        Brand Identity <span class="dot"></span>
+        Licensed Pattern Design <span class="dot"></span>
+        AI &amp; Automation <span class="dot"></span>
+        WordPress <span class="dot"></span>
+        Packaging Design <span class="dot"></span>
+        Platform Development <span class="dot"></span>
+        LMS &amp; Course Delivery <span class="dot"></span>
+        WooCommerce <span class="dot"></span>
+        Brand Identity <span class="dot"></span>
+        Licensed Pattern Design <span class="dot"></span>
+        AI &amp; Automation <span class="dot"></span>
+        WordPress <span class="dot"></span>
+        Packaging Design <span class="dot"></span>
+      </span>
+    </div>
+  </div>
+
+  <!-- DUAL OFFERING -->
+  <section class="dual" id="services">
+    <div class="dual-inner">
+      <div class="section-label">what I do</div>
+      <h2 class="section-title">Two disciplines.<br><em>One practice.</em></h2>
+      <p class="section-intro">
+        Most people are either designers or developers. I've spent two decades
+        becoming both &mdash; because the best digital products sit at the seam between them.
+      </p>
+
+      <div class="dual-grid">
+        <div class="pillar pillar-creative">
+          <div class="pillar-mark"></div>
+          <h3>Creative &amp; Design</h3>
+          <p>
+            Brand-aware visual work that holds up against the best creative studios &mdash;
+            grounded in fundamentals, never formulaic.
+          </p>
+          <ul>
+            <li>Brand identity &amp; visual systems</li>
+            <li>Website &amp; landing page design</li>
+            <li>UI &amp; UX design for digital products</li>
+            <li>Packaging &amp; print design</li>
+            <li>Licensed surface pattern &amp; illustration</li>
+          </ul>
+        </div>
+
+        <div class="pillar pillar-tech">
+          <div class="pillar-mark"></div>
+          <h3>Technical &amp; Build</h3>
+          <p>
+            Production builds that go beyond standard websites &mdash; including full-stack
+            platforms, learning systems, and AI-enabled tools.
+          </p>
+          <ul>
+            <li>Full-stack WordPress platform development</li>
+            <li>LMS builds (LearnDash) &mdash; courses, members, progress tracking</li>
+            <li>WooCommerce stores, maintenance &amp; optimisation</li>
+            <li>AI assistants &amp; WhatsApp bots for business</li>
+            <li>Process automation &amp; workflow design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED: iNGENIO -->
+  <section class="featured">
+    <div class="featured-geo-1"></div>
+    <div class="featured-geo-2"></div>
+
+    <div class="featured-inner">
+      <div class="featured-header">
+        <div>
+          <div class="section-label">featured project</div>
+          <span class="featured-tag">Founder · Full-stack platform build</span>
+        </div>
+        <h2>iNGENiO &mdash; <em>a full learning platform</em> for young digital artists.</h2>
+      </div>
+
+      <div class="lms-callout">
+        <div class="lms-callout-mark"></div>
+        <div class="lms-callout-text">
+          This isn't a website with a shop bolted on. <strong>iNGENiO is a complete Learning Management System</strong> &mdash;
+          courses, members, progress tracking, gated content, assessments, and e-commerce &mdash;
+          designed, built, and maintained single-handed.
+        </div>
+      </div>
+
+      <div class="featured-mockup">
+        <div class="mockup-geo-1"></div>
+        <div class="mockup-geo-2"></div>
+        <div class="mockup-geo-3"></div>
+        <div class="featured-mockup-content">
+          <div class="mockup-title">iNGENiO</div>
+          <div class="mockup-subtitle">Where young artists learn, create &amp; grow.</div>
+          <div class="mockup-chip-row">
+            <span class="mockup-chip">LMS</span>
+            <span class="mockup-chip">Courses</span>
+            <span class="mockup-chip">Community</span>
+            <span class="mockup-chip">Payments</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-details">
+        <div class="detail-block">
+          <h4>The brief</h4>
+          <p>
+            Build a complete online learning platform for Generation Alpha &mdash; from brand,
+            to curriculum delivery, to the infrastructure that runs it. A proper platform, not just a storefront.
+          </p>
+          <p>
+            No agency. No development team. A genuine end-to-end build balancing
+            educational integrity with the realities of running a small business.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h4>My role</h4>
+          <p>
+            Founder &amp; Lead Platform Developer. Responsible for every layer:
+            visual identity, UX, front-end development, LMS architecture,
+            membership &amp; payment flow, and ongoing SEO.
+          </p>
+          <div class="tech-badges">
+            <span class="tech-badge tech-badge-featured">LearnDash LMS</span>
+            <span class="tech-badge">WordPress</span>
+            <span class="tech-badge">WooCommerce</span>
+            <span class="tech-badge">Rank Math SEO</span>
+            <span class="tech-badge">Adobe CC</span>
+          </div>
+        </div>
+
+        <div class="detail-block" style="grid-column: 1 / -1;">
+          <div class="detail-stats">
+            <div>
+              <div class="stat-num">3+ yrs</div>
+              <div class="stat-label">Running &amp; iterating live</div>
+            </div>
+            <div>
+              <div class="stat-num">Full</div>
+              <div class="stat-label">LMS architecture &amp; delivery</div>
+            </div>
+            <div>
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Self-built across every layer</div>
+            </div>
+            <div>
+              <div class="stat-num">Gen α</div>
+              <div class="stat-label">UX designed for young learners</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WEB WORK -->
+  <section id="work">
+    <div class="section-label">selected web work</div>
+    <h2 class="section-title">Live sites &amp; <em>recent projects</em>.</h2>
+    <p class="section-intro">
+      A selection of recent builds across wellness, hospitality, NGO, and
+      early-stage app work &mdash; each live, each with real users.
+    </p>
+
+    <div class="selected-grid">
+
+      <a href="https://melanierowlands-cyber.github.io/thelabyrinthmassages/" target="_blank" rel="noopener" class="work-card work-card-labyrinth">
+        <div class="work-visual">
+          <div class="work-visual-content">
+            <div class="work-visual-title">The Labyrinth<br>Massages</div>
+            <div class="work-visual-tag">Live · Fish Hoek</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-meta-cat">Web Design &amp; Build · Wellness</div>
+          <h4>Restore. Release. Renew.</h4>
+          <p>
+            A warm, calming site for a Fish Hoek-based massage practice &mdash;
+            focused on trust-building for a cautious wellness clientele.
+          </p>
+          <span class="work-link">Visit site <span>↗</span></span>
+        </div>
+      </a>
+
+      <a href="https://style-cape-glow.vercel.app/" target="_blank" rel="noopener" class="work-card work-card-acutabove">
+        <div class="work-visual">
+          <div class="work-visual-content">
+            <div class="work-visual-title">A Cut Above<br>Hair Studio</div>
+            <div class="work-visual-tag">Live · Sun Valley</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-meta-cat">Web Design &amp; Build · Salon</div>
+          <h4>Portfolio site for an independent stylist</h4>
+          <p>
+            A warm, personality-led site for a local salon.
+            Designed from scratch and deployed live &mdash; built around the person behind the brand.
+          </p>
+          <span class="work-link">Visit site <span>↗</span></span>
+        </div>
+      </a>
+
+      <a href="https://melanierowlands-cyber.github.io/ganz-africa-mockup-2/" target="_blank" rel="noopener" class="work-card work-card-ganz">
+        <div class="work-visual">
+          <div class="work-visual-content">
+            <div class="work-visual-title">GanzAfrica</div>
+            <div class="work-visual-tag">Design mockup · Pan-African NGO</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-meta-cat">Web Design · NGO · 2026</div>
+          <h4>A prosperous &amp; sustainable future for Africa</h4>
+          <p>
+            Design-led mockup for GanzAfrica, a pan-African NGO focused on
+            land, agriculture, and environmental policy. Full site structure,
+            donor-facing hero, and content strategy &mdash; delivered for their internal dev team to build.
+          </p>
+          <span class="work-link">View mockup <span>↗</span></span>
+        </div>
+      </a>
+
+      <a href="https://yourhuddle.lovable.app/demo" target="_blank" rel="noopener" class="work-card work-card-huddle">
+        <div class="work-visual">
+          <div class="work-visual-content">
+            <div class="work-visual-title">Huddle</div>
+            <div class="work-visual-tag">Mobile app · AI-assisted build</div>
+          </div>
+        </div>
+        <div class="work-meta">
+          <div class="work-meta-cat">Product Design · Mobile App</div>
+          <h4>An app built with AI-assisted tooling</h4>
+          <p>
+            A live working demo of a mobile app developed with AI-assisted
+            development tools and Supabase on the backend &mdash; showing
+            how newer workflows can extend what a small team can ship.
+          </p>
+          <span class="work-link">View demo <span>↗</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- BRAND & PRINT -->
+  <section class="brand-print" id="brand">
+    <div class="brand-print-geo"></div>
+
+    <div class="brand-print-inner">
+      <div class="brand-print-header">
+        <div class="section-label">brand &amp; print</div>
+        <h2 class="section-title">Twenty years of <em>print</em>, <em>packaging</em> &amp; <em>pattern</em>.</h2>
+        <p class="section-intro">
+          Before the platforms &mdash; and still running alongside them &mdash; the studio work.
+          Including two international brand collaborations with licensed surface pattern
+          designs currently in production.
+        </p>
+      </div>
+
+      <!-- LICENSED PATTERN DESIGN — dual feature -->
+      <div class="licensed-feature">
+        <div class="licensed-feature-intro">
+          <div class="licensed-eyebrow">a career highlight</div>
+          <h3>Licensed pattern design for <em>two international brands</em>.</h3>
+          <p>
+            Surface pattern collections I designed, licensed and currently in production
+            with <strong>Studio E Fabrics</strong> (USA) and <strong>Nested Bean</strong> (USA) &mdash;
+            work that lives on retail shelves and flagship products, not in portfolios.
+          </p>
+        </div>
+
+        <div class="licensed-grid">
+
+          <!-- STUDIO E -->
+          <div class="licensed-col">
+            <div class="licensed-col-images licensed-studio-e">
+              <img src="assets/studio-e-fabrics-2.jpg" alt="Welcome To Our Neighborwood fabric collection stack" />
+              <img src="assets/studio-e-fabrics-1.jpg" alt="Butterfly print on soft blue cotton" />
+              <img src="assets/studio-e-fabrics-3.jpg" alt="Fox &amp; woodland creatures print" />
+            </div>
+            <div class="licensed-col-sub">Studio E Fabrics · USA</div>
+            <div class="licensed-col-brand">"Welcome To Our Neighborwood"</div>
+            <p class="licensed-col-desc">
+              A multi-print cotton fabric collection designed for the US quilting &amp;
+              craft fabric market. Hand-drawn woodland characters, seasonal flora, and
+              coordinating geometric prints &mdash; released as a full, shoppable range.
+            </p>
+            <div class="licensed-col-credit">
+              by Mel Rowlands for Studio E Fabrics &mdash; 100% cotton print
+            </div>
+          </div>
+
+          <!-- NESTED BEAN -->
+          <div class="licensed-col">
+            <div class="licensed-col-images licensed-nested-bean">
+              <img src="assets/nested-bean-monogram-gold.png" alt="Nested Bean Zen Sack Classic in Monogram Gold print" />
+              <img src="assets/nested-bean-monogram-amber.png" alt="Nested Bean Zen Sack Classic in Monogram Amber print" />
+            </div>
+            <div class="licensed-col-sub">Nested Bean · USA · still in production</div>
+            <div class="licensed-col-brand">"Monogram Gold" &amp; "Monogram Amber"</div>
+            <p class="licensed-col-desc">
+              Two patterns currently live on the Zen Sack&trade; Classic &mdash; Nested Bean's
+              flagship infant sleep product, trusted by over 2.5 million parents. The motif is built
+              from their "nb" brand initials reworked into a repeating pattern &mdash; the brand identity
+              rescaled into fabric.
+            </p>
+            <div class="licensed-col-credit">
+              by Mel Rowlands for Nested Bean &mdash; Zen Sack Classic, still in range
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PRINT & PACKAGING subsection -->
+      <div class="subsection-divider">
+        <h3>Print &amp; <em>packaging</em>.</h3>
+        <p>
+          Retail packaging systems, label design, and published pattern lookbooks &mdash;
+          selected from seven years of studio work at Fineday Design.
+        </p>
+      </div>
+
+      <div class="print-grid">
+
+        <div class="print-card">
+          <div class="print-image contain">
+            <img src="assets/sarah-graham-nourish.png" alt="Sarah Graham Nourish Power Ball packaging" />
+          </div>
+          <div class="print-meta">
+            <div class="print-meta-cat">Packaging · Sarah Graham Nourish</div>
+            <h4>Power Ball retail packaging</h4>
+            <p>
+              Full packaging system for Sarah Graham's gluten-free, dairy-free
+              power ball range. Two flavour variants, confident typography,
+              shelf-ready retail identity.
+            </p>
+          </div>
+        </div>
+
+        <div class="print-card">
+          <div class="print-image contain">
+            <img src="assets/jimmy-public-gin.jpg" alt="Jimmy Public Classic Gin label" />
+          </div>
+          <div class="print-meta">
+            <div class="print-meta-cat">Label Design · Spirits</div>
+            <h4>Jimmy Public Classic Gin</h4>
+            <p>
+              Handcrafted gin label with vintage cycling motif and
+              confident script wordmark &mdash; balancing
+              heritage feel with a clean, modern craft-spirits look.
+            </p>
+          </div>
+        </div>
+
+        <div class="print-card">
+          <div class="print-image">
+            <img src="assets/sunrise-lookbook.png" alt="Sunrise surface pattern collection lookbook spread" />
+          </div>
+          <div class="print-meta">
+            <div class="print-meta-cat">Surface Pattern · Lookbook</div>
+            <h4>"Sunrise" pattern collection</h4>
+            <p>
+              A coordinated surface pattern collection inspired by
+              summer mornings. Shown in its published lookbook spread,
+              with coordinating prints and a hand-illustrated cover mark.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="capabilities" id="capabilities">
+    <div class="capabilities-geo-1"></div>
+    <div class="capabilities-geo-2"></div>
+    <div class="capabilities-inner">
+      <div>
+        <div class="section-label">the toolkit</div>
+        <h2 class="section-title">Capabilities, <em>in detail</em>.</h2>
+        <p class="section-intro">
+          A wide toolkit, built over time. Used in service of whatever a
+          project actually needs &mdash; not the other way around.
+        </p>
+      </div>
+
+      <div class="cap-grid">
+        <div class="cap-item">
+          <div class="cap-item-label">01 · Platforms</div>
+          <h4>LMS &amp; Learning Systems</h4>
+          <p>Full LearnDash builds. Courses, lessons, quizzes, member tiers, progress tracking &mdash; integrated cleanly with payments and UX.</p>
+        </div>
+        <div class="cap-item">
+          <div class="cap-item-label">02 · E-commerce</div>
+          <h4>WooCommerce &amp; WordPress</h4>
+          <p>Product uploads, store maintenance, fixing issues, improving UX, supporting growth at every stage.</p>
+        </div>
+        <div class="cap-item">
+          <div class="cap-item-label">03 · Front-end</div>
+          <h4>HTML, CSS &amp; hand-built sites</h4>
+          <p>Clean, semantic markup. Production-ready builds without the bloat of page builders where it counts.</p>
+        </div>
+        <div class="cap-item">
+          <div class="cap-item-label">04 · Design</div>
+          <h4>Brand, UI &amp; visual identity</h4>
+          <p>Adobe Creative Suite. Logo, packaging, UI, illustration, surface pattern &mdash; with a real design sensibility.</p>
+        </div>
+        <div class="cap-item">
+          <div class="cap-item-label">05 · AI tooling</div>
+          <h4>Assistants &amp; WhatsApp bots</h4>
+          <p>Building conversational AI assistants for small businesses &mdash; practical, ROI-focused, not buzzword-led.</p>
+        </div>
+        <div class="cap-item">
+          <div class="cap-item-label">06 · Data</div>
+          <h4>SEO &amp; analytics fundamentals</h4>
+          <p>Junior Data Analyst background. Comfortable with Google Search Console, schema, Rank Math, and the numbers behind the work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-visual-shape-1"></div>
+        <div class="about-visual-shape-2"></div>
+        <div class="about-visual-photo">
+          <img src="assets/mel-studio.jpg" alt="Melanie Rowlands in her Cape Town studio" />
+        </div>
+        <div class="about-visual-caption">in the studio</div>
+      </div>
+
+      <div class="about-body">
+        <div class="section-label">the short version</div>
+        <h3>I've had the kind of career that gives you <em>range</em> &mdash; and I've leaned into it.</h3>
+        <p>
+          I started my working life as a Junior Analyst at Goldman Sachs in London
+          &mdash; a useful apprenticeship in doing careful, rigorous work under pressure.
+          I came home to Cape Town and co-founded Fineday Design Studio, where I spent
+          seven years building food brands and packaging from scratch &mdash; work that
+          went on to include two licensed international pattern collaborations
+          (Studio E Fabrics and Nested Bean, both in the US).
+        </p>
+        <p>
+          After that I shifted closer to the technical side as a Junior Data Analyst,
+          then back to building something of my own. Today I run <strong>iNGENiO</strong> &mdash;
+          a full-stack digital art learning platform for children &mdash; where I own the platform
+          architecture, the LMS, the UX, and the brand. Every pixel and every line of code.
+        </p>
+        <p>
+          What all of that adds up to is a genuinely unusual combination:
+          design instinct, e-commerce fluency, platform &amp; LMS development, and a
+          growing practice in AI-enabled tools. It's the kind of toolkit that
+          suits small and mid-sized businesses that don't need an agency &mdash; they
+          need a trusted pair of hands.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <strong>Goldman Sachs</strong>
+            Junior Analyst · London
+          </div>
+          <div class="highlight-item">
+            <strong>Fineday Design</strong>
+            Co-owner · 7 years
+          </div>
+          <div class="highlight-item">
+            <strong>iNGENiO</strong>
+            Founder · Platform Lead
+          </div>
+          <div class="highlight-item">
+            <strong>Studio E &amp; Nested Bean</strong>
+            Licensed pattern designer · USA
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-geo-1"></div>
+    <div class="contact-geo-2"></div>
+    <div class="contact-geo-3"></div>
+
+    <div class="contact-inner">
+      <div class="section-label">get in touch</div>
+      <h2>Let's build something <em>worth keeping</em>.</h2>
+      <p>
+        Open to retainer work, freelance projects, and conversations with
+        small business owners who care about the craft of what they put out in the world.
+      </p>
+      <div class="contact-cta-row">
+        <a href="mailto:hello@example.com" class="btn-gold">
+          Email me
+          <span>→</span>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn-outline">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Melanie Rowlands &mdash; Designed &amp; built <em>in Cape Town</em>.
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('section > *, .hero > div, .dual-inner, .featured-inner, .brand-print-inner, .capabilities-inner, .about-grid, .contact-inner').forEach(el => {
+    el.classList.add('fade-up');
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
